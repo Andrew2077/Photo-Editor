@@ -159,4 +159,4 @@ if uploaded_file is not None:
 with st.sidebar.expander("About"):
     st.write("""
 this app was designed by :red[[Andrew2077](https://github.com/Andrew2077)]
-you can find Source Code [here]()""")
+you can find Source Code [here](https://github.com/Andrew2077/Photo-editing-app-streamlit)""")
