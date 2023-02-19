@@ -112,6 +112,7 @@ if uploaded_file is not None:
             elif effect_1 == 'Sketch':
                 threshold = st.sidebar.slider("Intensity", 1, 255, 125, step=2)
                 edited_image = sktech_filter(image, threshold)
+                # st.write(type(edited_image))
                 
             else:
                 edited_image = image
@@ -131,7 +132,7 @@ if uploaded_file is not None:
                 st.image(edited_image, use_column_width=True)
                 
                 
-        if filter == 'denoise' :
+        elif filter == 'denoise' :
             h_filter_stregth = st.sidebar.slider("Iuminance Filter Strength", 0, 25, 0, step=1)
             h_color_filter_stregth = st.sidebar.slider("Color Filter Strength", 0, 25, 0, step=1)
             edited_image = cv2.fastNlMeansDenoisingColored(np.array(image),None,h_filter_stregth,h_color_filter_stregth,7,21) 
@@ -141,15 +142,17 @@ if uploaded_file is not None:
             # with col2:
             #     st.markdown(f'<p{block_header}">Edited Image</p>',unsafe_allow_html=True)
             edited_image = image
+            
         if apply_denoise == False:
             st.image(edited_image, use_column_width=True)
     st.write(f'the image shape is', np.array(image).shape, )
-    st.write(type(edited_image))
+    # st.write(type(edited_image))
+    # st.write(apply_denoise)
     if type(edited_image) == np.ndarray:
         edited_image = Image.fromarray(edited_image)
     edited_image.save('enhanced_image.jpg')
     with open("enhanced_image.jpg", "rb") as f:
-        btn = st.download_button(
+        btn = st.sidebar.download_button(
             label="Download",
             data=f,
             file_name="enhanced_image.jpg",
