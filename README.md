@@ -2,7 +2,7 @@
  - a web application created with streamlit that uses opencv and PIL to edit photos
 - try it on streamit
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)]([https://<your-custom-subdomain>.streamlit.app](https://andrew2077-photo-editing-app-streamlit-app-17hzbq.streamlit.app))
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)]([https://andrew2077-photo-editing-app-streamlit-app-17hzbq.streamlit.app])
 
 ### Preview
 
