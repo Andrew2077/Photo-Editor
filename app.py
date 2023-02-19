@@ -1,3 +1,6 @@
+import os 
+os.chdir(os.getcwd())
+
 import streamlit as st
 from utils import *
 from utils.filters import *
