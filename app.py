@@ -145,7 +145,7 @@ if uploaded_file is not None:
             
         if apply_denoise == False:
             st.image(edited_image, use_column_width=True)
-    st.write(f'the image shape is', np.array(image).shape, )
+    st.write(f'the Photo Resolution is', np.array(image).shape, )
     # st.write(type(edited_image))
     # st.write(apply_denoise)
     if type(edited_image) == np.ndarray:
