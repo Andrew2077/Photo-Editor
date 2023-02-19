@@ -8,5 +8,5 @@
 
 - this is the main page of the app where you can upload your photo and choose the effect you want to apply to it
 [![preview](imgs/preview1.png)
-- this is the result of applying the effect
+- this is the result of applying some effects to a photo
 [![preview](imgs/preview2.png)
