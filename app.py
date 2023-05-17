@@ -120,10 +120,20 @@ if uploaded_file is not None:
             if apply_denoise:
                 h_filter_stregth = st.sidebar.slider("Iuminance Filter Strength", 0, 25, 0, step=1)
                 h_color_filter_stregth = st.sidebar.slider("Color Filter Strength", 0, 25, 0, step=1)
-                img = Image.fromarray(edited_image)
+                # try :
+                    # img = np.array(edited_image)
+                img = edited_image
+
+                try :
+                    print(img.mode)
+
+                except:
+                    print(type(img))
+                    img = Image.fromarray(img)
+                #     img = edited_image
                 # st.write(type(img), img.mode)
                 if img.mode == 'RGB':
-                    edited_image = cv2.fastNlMeansDenoisingColored(edited_image,None,h_filter_stregth,h_color_filter_stregth,7,21) 
+                    edited_image = cv2.fastNlMeansDenoisingColored(np.array(edited_image),None,h_filter_stregth,h_color_filter_stregth,7,21) 
                 elif img.mode == 'L':
                     edited_image = cv2.fastNlMeansDenoising(edited_image,None,h_filter_stregth,7,21)
                 
@@ -159,7 +169,9 @@ if uploaded_file is not None:
             mime="image/jpg",
         )
 
-with st.sidebar.expander("About"):
-    st.write("""
-this app was designed by :red[[Andrew2077](https://github.com/Andrew2077)]
-you can find Source Code [here](https://github.com/Andrew2077/Photo-editing-app-streamlit)""")
+with st.sidebar:
+    st.write('Upload image first')
+# with st.sidebar.expander("About"):
+#     st.write("""
+# this app was designed by :red[[Andrew2077](https://github.com/Andrew2077)]
+# you can find Source Code [here](https://github.com/Andrew2077/Photo-editing-app-streamlit)""")
